@@ -5,24 +5,27 @@
 ### 1. Ouvrir un terminal
 
 ### 2. Se connecter sur baobab  
-	ssh 'mon_identifiant_unige'@baobab2.hpc.unige.ch
+```bash
+ssh 'mon_identifiant_unige'@baobab2.hpc.unige.ch
+ssh 'mon_identifiant_unige'@login1.yggdrasil.hpc.unige.ch
+```
 
-### 3. Monter le nas sur le login nod
-	ps -u 'mon_identifiant_unige' | awk '$4=="dbus-daemon"{print $1}' | xargs kill \
-	dbus-launch bash \
-	gio mount 'smb://ISIS;'mon_identifiant_unige'@nasac-m2.unige.ch/m-GHoltmaat'
+### 3. Monter le nas sur le login node
+```bash
+ps -u $USER | awk '$4=="dbus-daemon"{print $1}' | xargs kill
+dbus-launch bash
+gio mount "smb://ISIS;$USER@nasac-m2.unige.ch/m-GHoltmaat"
+```
+
+
 
 ### 4. Copier les fichiers .tif à utiliser pour le train
+```bash
   rsync -av \
   --no-perms \
-  ~/.gvfs/*/BioinfoSupport/GluSnFR_Data_DeepCad/ModelTrainingNotAlignedAwakeAnesthetizedNoOptoStim \
+  ~/.gvfs/*/BioinfoSupport/GluSnFR_Data_DeepCad/Model_trial \
   ~/scratch/
-
-### 5. Copier les fichiers .tif à utiliser pour le test
-  rsync -av \
-  --no-perms \
-  ~/.gvfs/*/BioinfoSupport/GluSnFR_Data_DeepCad/ModelTrainingNotAlignedAwakeAnesthetizedNoOptoStim \
-  ~/scratch/
+```
 
 ### 6. Lancer le script bash Launch_vm
   bash Launch_vm.sh
