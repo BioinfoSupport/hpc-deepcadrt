@@ -22,6 +22,7 @@ RUN pip3 install deepcad onnx
 #  jupyterlab
 
 ADD deepcadrt_train.py /usr/bin/
+ADD deepcadrt_test.py /usr/bin/
 
 VOLUME /DeepCAD-RT/DeepCAD_RT_pytorch/notebooks/datasets/
 WORKDIR /DeepCAD-RT/DeepCAD_RT_pytorch/notebooks/
