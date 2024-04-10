@@ -30,7 +30,7 @@ gio mount "smb://ISIS;$USER@nasac-m2.unige.ch/m-GHoltmaat"
 
 ### 4. Synchrnonise NAS folder ('.tif' files for training and testing)
 ```bash
-  rsync -av \
+rsync -av \
   --no-perms \
   ~/.gvfs/*/BioinfoSupport/GluSnFR_Data_DeepCad/Model_trial \
   ~/scratch/
@@ -59,7 +59,7 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
 
 ### 8. Copy the trained model back to the NAS
 ```bash
-  rsync -av \
+rsync -av \
   --no-perms \
   ~/scratch/Model_trial/Model.out \
   ~/scratch/Model_trial/Test.out \
