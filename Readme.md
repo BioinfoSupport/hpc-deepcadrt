@@ -34,7 +34,7 @@ gio mount "smb://ISIS;$USER@nasac-m2.unige.ch/m-GHoltmaat"
 	cd /srv/beegfs/scratch/users/d/'mon_identifiant_unige'/
 
 ### 8. Lancer le train
-	deepcadrt_train.py --datasets_path=dataset_train/ --pth_dir ModelTrainingSmall.out --n_epochs=4 --patch_x=100 --patch_y=100 --patch_t=10
+	sbatch deepcadrt.sbatch deepcadrt_train.py --datasets_path=Model_trial/Train --pth_dir ModelTrainingSmall.out --n_epochs=4 --patch_x=100 --patch_y=100 --patch_t=10
 
 ### 9. Lancer le test pour faire le traitement d’images
 	deepcadrt_test.py --datasets_path=dataset_test/ --pth_dir ModelTrainingSmall.out --denoise_model=datasets_test_<numero_du_train> --output_dir=Sortie/ --patch_x=100 --patch_y=100 --patch_t=10

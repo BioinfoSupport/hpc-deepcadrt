@@ -6,6 +6,11 @@
 #SBATCH --cpus-per-task=8 
 #SBATCH --mem=64G
 
+set -x
+
+echo $(realpath ~/scratch/)
+echo $(realpath ./) 
+
 singularity exec --nv \
   --cleanenv \
   --no-home \
@@ -13,6 +18,7 @@ singularity exec --nv \
   --env MPLCONFIGDIR=/scratch \
   --scratch /scratch \
   --bind $(realpath ~/scratch/) \
+  --pwd $(realpath ./) \
   /acanas/m-BioinfoSupport/singularity/deepcadrt_v2.sif $@
 
 
