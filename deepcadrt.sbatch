@@ -7,9 +7,8 @@
 #SBATCH --mem=64G
 
 set -x
-
 echo $(realpath ~/scratch/)
-echo $(realpath ./) 
+echo $(realpath ./)
 
 singularity exec --nv \
   --cleanenv \

@@ -20,7 +20,7 @@ ssh 'unige_id'@login1.yggdrasil.hpc.unige.ch
 ```
 
 
-### 3. Mount NAS on the login node
+### 3. Mount NAS on the login node (do it once)
 ```bash
 ps -u $USER | awk '$4=="dbus-daemon"{print $1}' | xargs kill
 dbus-launch bash
@@ -38,21 +38,23 @@ gio mount "smb://ISIS;$USER@nasac-m2.unige.ch/m-GHoltmaat"
 
 ### 6. Run the training step
 ```bash
+cd ~/scratch/Model_trial
 sbatch deepcadrt.sbatch deepcadrt_train.py \
-  --n_epochs=4 --patch_x=100 --patch_y=100 --patch_t=10 \
-  --datasets_path=~/scratch/Model_trial/Train \
-  --pth_dir=~/scratch/Model_trial/Model.out
+  --n_epochs=2 --patch_x=100 --patch_y=100 --patch_t=10 \
+  --datasets_path=Train \
+  --pth_dir=Model.out
 ```
 
 
 ### 7. Run the testing step
-```bash	
+```bash
+cd ~/scratch/Model_trial
 sbatch deepcadrt.sbatch deepcadrt_test.py \
   --patch_x=100 --patch_y=100 --patch_t=10 \
-  --datasets_path=~/scratch/Model_trial/Test \
-  --pth_dir=~/scratch/Model_trial/Model.out \
+  --datasets_path=Test \
+  --pth_dir=Model.out \
   --denoise_model=datasets_test_'training_number' \
-  --output_dir=~/scratch/Model_trial/Test.out
+  --output_dir=Test.out
 ```
 
 ### 8. Copy the trained model back to the NAS
