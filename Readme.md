@@ -5,9 +5,7 @@ This repository contains instruction to run the tool on the HPC cluster of the u
 
 
 # Instructions
-### 0. Create a folder on the NAS
-
-Follow the structure:
+### 1. Create a folder on the NAS with the following structure
 
 * `Model_trial/`
   - `Train/`
@@ -15,13 +13,17 @@ Follow the structure:
   - [`deepcadrt.sbatch`](https://github.com/BioinfoSupport/hpc-deepcadrt/blob/main/deepcadrt.sbatch) # Found in repository root folder, edit if necessary
 
 
-### 1. Open a terminal
+### 2. Connect the HPC cluster
 
-### 2. Connect to hpc (Baobab or Yggdrdasil)
+* Either by opening a terminal on your machine and connect via SSH:
 ```bash
 ssh 'unige_id'@baobab2.hpc.unige.ch
 ssh 'unige_id'@login1.yggdrasil.hpc.unige.ch
 ```
+
+* Or by connecting to http://ondemand.baobab.hpc.unige.ch/
+
+### 2. Connect to hpc (Baobab or Yggdrdasil)
 
 
 ### 3. Mount NAS on the login node (do it once)
