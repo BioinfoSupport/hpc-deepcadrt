@@ -1,6 +1,10 @@
 
-# Readme deepcadrt
+# hpc-deepcadrt
+[DeepCAD-RT](https://github.com/cabooster/DeepCAD-RT) is a tool to denoise timelapse imaging data.
+This repository contains instruction to run the tool on the HPC cluster of the university of Geneva.
 
+
+# Instructions
 ### 0. Create a folder on the NAS
 
 Follow the structure:
