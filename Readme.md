@@ -1,10 +1,11 @@
 
 # hpc-deepcadrt
 [DeepCAD-RT](https://github.com/cabooster/DeepCAD-RT) is a tool to denoise timelapse imaging data.
-This repository contains instruction to run the tool on the HPC cluster of the university of Geneva.
+This repository contains code and instructions to run the tool on the HPC cluster of the University of Geneva.
 
 
 # Instructions
+
 ### 1. Create a folder on the NAS with the following structure
 
 * `Model_trial/`
@@ -15,15 +16,13 @@ This repository contains instruction to run the tool on the HPC cluster of the u
 
 ### 2. Connect the HPC cluster
 
-* Either by opening a terminal on your machine and connect via SSH:
+* Either by opening a terminal on your machine and connect via SSH (either Baobab or Yggdrasil):
 ```bash
 ssh 'unige_id'@baobab2.hpc.unige.ch
 ssh 'unige_id'@login1.yggdrasil.hpc.unige.ch
 ```
 
 * Or by connecting to http://ondemand.baobab.hpc.unige.ch/
-
-### 2. Connect to hpc (Baobab or Yggdrdasil)
 
 
 ### 3. Mount NAS on the login node (do it once)
