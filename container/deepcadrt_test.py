@@ -6,7 +6,7 @@ from deepcad.test_collection import testing_class
 
 # Command line arguments parser
 parser = argparse.ArgumentParser(description='Test a DeepCadRT model')
-parser.add_argument('--overlap_factor',default=0.6,type=int,help='The overlap factor between two adjacent patches')
+parser.add_argument('--overlap_factor',default=0.6,type=float,help='The overlap factor between two adjacent patches')
 parser.add_argument('--datasets_path',required=True,help='Dataset path')
 parser.add_argument('--fmap',default=16,type=int,help='The number of feature maps')
 parser.add_argument('--output_dir',required=True,help='Result file root path')

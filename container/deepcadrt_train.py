@@ -6,7 +6,7 @@ from deepcad.train_collection import training_class
 
 # Command line arguments parser
 parser = argparse.ArgumentParser(description='Train a DeepCadRT model')
-parser.add_argument('--overlap_factor',default=0.4,type=int,help='Overlap factor')
+parser.add_argument('--overlap_factor',default=0.4,type=float,help='Overlap factor')
 parser.add_argument('--datasets_path',required=True,help='Folder containing files for training')
 parser.add_argument('--n_epochs',default=5,type=int,help='Number of training epochs')
 parser.add_argument('--fmap',default=16,type=int,help='Model complexity')
