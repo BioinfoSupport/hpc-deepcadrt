@@ -44,6 +44,7 @@ rsync -av \
   ~/scratch/
 ```
 
+
 ### 6. Run the training step
 ```bash
 cd ~/scratch/Model_trial
@@ -107,8 +108,8 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
   --patch_x=100 --patch_y=100 --patch_t=10 \
   --datasets_path=Test \
   --pth_dir=Model.out \
-  --denoise_model=datasets_test_'training_number' \
-  --output_dir=Test.out
+  --output_dir=Test.out \
+  --denoise_model=datasets_test_'training_number'
 ```
 
 **optional arguments:**
@@ -152,8 +153,7 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
 ```bash
 rsync -av \
   --no-perms \
-  ~/scratch/Model_trial/Model.out \
-  ~/scratch/Model_trial/Test.out \
+  ~/scratch/Model_trial/*.out \
   ~/.gvfs/*/BioinfoSupport/GluSnFR_Data_DeepCad/Model_trial/
 ```
 
