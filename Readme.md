@@ -59,45 +59,46 @@ sbatch deepcadrt.sbatch deepcadrt_train.py \
 ```
   -h, --help            show this help message and exit
   --overlap_factor OVERLAP_FACTOR
-                        Overlap factor
+                        Overlap factor (Default=0.4)
   --datasets_path DATASETS_PATH
-                        Folder containing files for training
-  --n_epochs N_EPOCHS   Number of training epochs
-  --fmap FMAP           Model complexity
+                        Folder containing files for training (required)
+  --n_epochs N_EPOCHS   Number of training epochs (Default=5)
+  --fmap FMAP           Model complexity (Default=16)
   --output_dir OUTPUT_DIR
-                        Output directory
-  --pth_dir PTH_DIR     The path for pth file and result images
-  --onnx_dir ONNX_DIR   Directory onnx model
+                        Output directory (Default='./results')
+  --pth_dir PTH_DIR     The path for pth file and result images (required)
+  --onnx_dir ONNX_DIR   Directory onnx model (Default='./onnx')
   --batch_size BATCH_SIZE
-                        Batch size
-  --patch_t PATCH_T     The time dimension (frames) of 3D patches
-  --patch_x PATCH_X     The width of 3D patches
-  --patch_y PATCH_Y     The height of 3D patches
-  --gap_y GAP_Y
-  --gap_x GAP_X
-  --gap_t GAP_T
-  --lr LR               Learning rate
-  --b1 B1               Adam: bata1
-  --b2 B2               Adam: bata2
-  --GPU GPU             GPU index
-  --ngpu NGPU           ngpu
+                        Batch size (Default=1)
+  --patch_t PATCH_T     The time dimension (frames) of 3D patches (Default=150)
+  --patch_x PATCH_X     The width of 3D patches (Default=150)
+  --patch_y PATCH_Y     The height of 3D patches (Default=150)
+  --gap_y GAP_Y         (Default=60)
+  --gap_x GAP_X         (Default=60)
+  --gap_t GAP_T         (Default=6)
+  --lr LR               Learning rate (Default=0.00005)
+  --b1 B1               Adam: bata1 (Default=0.5)
+  --b2 B2               Adam: bata2 (Default=0.999)
+  --GPU GPU             GPU index (Default=0)
+  --ngpu NGPU           ngpu (Default=1)
   --num_workers NUM_WORKERS
+                        if you use Windows system, set this to 0. (Default=8)
   --scale_factor SCALE_FACTOR
-                        The factor for image intensity scaling
+                        The factor for image intensity scaling (Default=1)
   --train_datasets_size TRAIN_DATASETS_SIZE
-                        Datasets size for training (how many 3D patches)
+                        Datasets size for training (how many 3D patches) (Default=3000)
   --select_img_num SELECT_IMG_NUM
-                        Select the number of frames used for training
+                        Select the number of frames used for training (Default=1000000)
   --test_datasize TEST_DATASIZE
-                        test data size
+                        test data size (Default=400)
   --visualize_images_per_epoch
-                        Whether to show result images after each epoch
+                        Whether to show result images after each epoch (Default=False)
   --save_test_images_per_epoch
-                        Whether to save result images after each epoch
+                        Whether to save result images after each epoch (Default=False)
   --colab_display COLAB_DISPLAY
-                        colab display
+                        colab display (Default=False)
   --result_display RESULT_DISPLAY
-                        result display
+                        result display (Default='')
 ```
 
 
@@ -116,37 +117,37 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
 ```
   -h, --help            show this help message and exit
   --overlap_factor OVERLAP_FACTOR
-                        The overlap factor between two adjacent patches
+                        The overlap factor between two adjacent patches (Default=0.6)
   --datasets_path DATASETS_PATH
-                        Dataset path
-  --fmap FMAP           The number of feature maps
+                        Dataset path (required)
+  --fmap FMAP           The number of feature maps (Default=16)
   --output_dir OUTPUT_DIR
-                        Result file root path
-  --pth_dir PTH_DIR     The path file root path
+                        Result file root path (required)
+  --pth_dir PTH_DIR     The path file root path (required)
   --batch_size BATCH_SIZE
-                        Batch size
-  --patch_t PATCH_T     The time dimension (frames) of 3D patches
-  --patch_x PATCH_X     The width of 3D patches
-  --patch_y PATCH_Y     The height of 3D patches
-  --gap_y GAP_Y
-  --gap_x GAP_X
-  --gap_t GAP_T
-  --GPU GPU             the index of GPU you will use for computation
-  --ngpu NGPU           ngpu
+                        Batch size (Default=1)
+  --patch_t PATCH_T     The time dimension (frames) of 3D patches (Default=150)
+  --patch_x PATCH_X     The width of 3D patches (Default=150)
+  --patch_y PATCH_Y     The height of 3D patches (Default=150)
+  --gap_y GAP_Y         (Default=40)
+  --gap_x GAP_X         (Default=40)
+  --gap_t GAP_T         (Default=4)
+  --GPU GPU             the index of GPU you will use for computation (Default=0)
+  --ngpu NGPU           ngpu (Default=1)
   --num_workers NUM_WORKERS
-                        if you use Windows system, set this to 0.
+                        if you use Windows system, set this to 0.(Default=4)
   --scale_factor SCALE_FACTOR
-                        The factor for image intensity scaling
+                        The factor for image intensity scaling (Default=1)
   --test_datasize TEST_DATASIZE
-                        the number of frames to be tested (test all frames if the number exceeds the total number of frames in a .tif file
+                        the number of frames to be tested (test all frames if the number exceeds the total number of frames in a .tif file (Default=1000000)
   --denoise_model DENOISE_MODEL
-                        Denoise model
+                        Denoise model (required)
   --visualize_images_per_epoch
-                        Whether to show result images after each epoch
+                        Whether to show result images after each epoch (Default=False)
   --colab_display COLAB_DISPLAY
-                        colab display
+                        colab display (Default=False)
   --result_display RESULT_DISPLAY
-                        result display
+                        result display (Default='')
 ```
 
 ### 8. Copy the trained model back to the NAS
