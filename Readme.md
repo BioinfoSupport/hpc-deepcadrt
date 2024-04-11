@@ -54,6 +54,52 @@ sbatch deepcadrt.sbatch deepcadrt_train.py \
 ```
 
 
+**optional arguments:**
+```
+  -h, --help            show this help message and exit
+  --overlap_factor OVERLAP_FACTOR
+                        Overlap factor
+  --datasets_path DATASETS_PATH
+                        Folder containing files for training
+  --n_epochs N_EPOCHS   Number of training epochs
+  --fmap FMAP           Model complexity
+  --output_dir OUTPUT_DIR
+                        Output directory
+  --pth_dir PTH_DIR     The path for pth file and result images
+  --onnx_dir ONNX_DIR   Directory onnx model
+  --batch_size BATCH_SIZE
+                        Batch size
+  --patch_t PATCH_T     The time dimension (frames) of 3D patches
+  --patch_x PATCH_X     The width of 3D patches
+  --patch_y PATCH_Y     The height of 3D patches
+  --gap_y GAP_Y
+  --gap_x GAP_X
+  --gap_t GAP_T
+  --lr LR               Learning rate
+  --b1 B1               Adam: bata1
+  --b2 B2               Adam: bata2
+  --GPU GPU             GPU index
+  --ngpu NGPU           ngpu
+  --num_workers NUM_WORKERS
+  --scale_factor SCALE_FACTOR
+                        The factor for image intensity scaling
+  --train_datasets_size TRAIN_DATASETS_SIZE
+                        Datasets size for training (how many 3D patches)
+  --select_img_num SELECT_IMG_NUM
+                        Select the number of frames used for training
+  --test_datasize TEST_DATASIZE
+                        test data size
+  --visualize_images_per_epoch
+                        Whether to show result images after each epoch
+  --save_test_images_per_epoch
+                        Whether to save result images after each epoch
+  --colab_display COLAB_DISPLAY
+                        colab display
+  --result_display RESULT_DISPLAY
+                        result display
+```
+
+
 ### 7. Run the testing step
 ```bash
 cd ~/scratch/Model_trial
@@ -63,6 +109,43 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
   --pth_dir=Model.out \
   --denoise_model=datasets_test_'training_number' \
   --output_dir=Test.out
+```
+
+**optional arguments:**
+```
+  -h, --help            show this help message and exit
+  --overlap_factor OVERLAP_FACTOR
+                        The overlap factor between two adjacent patches
+  --datasets_path DATASETS_PATH
+                        Dataset path
+  --fmap FMAP           The number of feature maps
+  --output_dir OUTPUT_DIR
+                        Result file root path
+  --pth_dir PTH_DIR     The path file root path
+  --batch_size BATCH_SIZE
+                        Batch size
+  --patch_t PATCH_T     The time dimension (frames) of 3D patches
+  --patch_x PATCH_X     The width of 3D patches
+  --patch_y PATCH_Y     The height of 3D patches
+  --gap_y GAP_Y
+  --gap_x GAP_X
+  --gap_t GAP_T
+  --GPU GPU             the index of GPU you will use for computation
+  --ngpu NGPU           ngpu
+  --num_workers NUM_WORKERS
+                        if you use Windows system, set this to 0.
+  --scale_factor SCALE_FACTOR
+                        The factor for image intensity scaling
+  --test_datasize TEST_DATASIZE
+                        the number of frames to be tested (test all frames if the number exceeds the total number of frames in a .tif file
+  --denoise_model DENOISE_MODEL
+                        Denoise model
+  --visualize_images_per_epoch
+                        Whether to show result images after each epoch
+  --colab_display COLAB_DISPLAY
+                        colab display
+  --result_display RESULT_DISPLAY
+                        result display
 ```
 
 ### 8. Copy the trained model back to the NAS
