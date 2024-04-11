@@ -15,6 +15,8 @@ This repository contains code and instructions to run the tool on the HPC cluste
 
 
 ### 2. Connect the HPC cluster
+[!WARNING]
+In the following commands, replace 'unige_id' with your personal login identifier
 
 * Either by opening a terminal on your machine and connect via SSH (either Baobab or Yggdrasil):
 ```bash
