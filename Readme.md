@@ -104,6 +104,10 @@ sbatch deepcadrt.sbatch deepcadrt_train.py \
 
 
 ### 7. Run the testing step
+
+> [!WARNING]
+> In the following commands, replace 'training_number' with the correct training number
+
 ```bash
 cd ~/scratch/Model_trial
 sbatch deepcadrt.sbatch deepcadrt_test.py \
