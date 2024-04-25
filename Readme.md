@@ -161,5 +161,35 @@ rsync -av \
 
 ### 9. Close the vm and Baobab. Restore local terminal
 ```bash	 
+ctrl+D
+```
+
+
+### Helper problem with tif files
+
+If you encounter problems with your tif files during testing, this may be due to problems with the encoding of your tif files. To re-encode your files you can use the python script tif_2_tif.py
+
+Open a terminal on baobab
+
+Get a gpu node
+```bash	
+salloc --time=1:00:00 --partition=shared-gpu --ntasks=1 --gpus-per-task=1 --cpus-per-task=8 --mem=64G
+```
+Launch the virtual machine
+```bash	
+singularity exec --nv --cleanenv --no-home --env PYTHONPATH=/usr/local/lib/ --env MPLCONFIGDIR=/scratch --scratch /scratch --bind $(realpath ~/
+scratch/) ~/deepcadrt_v2.sif bash
+```
+Execute the python script
+```bash	
+python3 Tif_2_tif.py <Directory_with_input_files> <Name_output_directory>
+```
+To exit and return to the terminal
+```bash	 
 2x ctrl+D
 ```
+
+
+
+
+
