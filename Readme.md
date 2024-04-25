@@ -11,7 +11,8 @@ This repository contains code and instructions to run the tool on the HPC cluste
 * `Model_trial/`
   - `Train/`
   - `Test/`
-  - [`deepcadrt.sbatch`](https://github.com/BioinfoSupport/hpc-deepcadrt/blob/main/deepcadrt.sbatch) # Found in repository root folder, edit if necessary
+  - [`deepcadrt.sbatch`] (https://github.com/BioinfoSupport/hpc-deepcadrt/blob/main/deepcadrt.sbatch) # Found in repository root folder, edit if necessary
+  - [`Tif_2_tif.py`] (https://github.com/BioinfoSupport/hpc-deepcadrt/blob/main/Tif_2_tif.py) # Optional: if you encounter problems with your tif files. Found in repository root folder. Help at the bottom of the page.
 
 
 ### 2. Connect the HPC cluster
