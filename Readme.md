@@ -174,8 +174,10 @@ ctrl+D
 
 If you encounter problems with your tif files during testing, this may be due to problems with the encoding of your tif files. To re-encode your files you can use the python script tif_2_tif.py
 
-Open a terminal on baobab
-
+Open a terminal and log on to baobab
+```bash
+ssh 'unige_id'@baobab2.hpc.unige.ch
+```
 Get a gpu node
 ```bash	
 salloc --time=1:00:00 --partition=shared-gpu --ntasks=1 --gpus-per-task=1 --cpus-per-task=8 --mem=64G
@@ -183,7 +185,13 @@ salloc --time=1:00:00 --partition=shared-gpu --ntasks=1 --gpus-per-task=1 --cpus
 Launch the virtual machine
 ```bash	
 singularity exec --nv --cleanenv --no-home --env PYTHONPATH=/usr/local/lib/ --env MPLCONFIGDIR=/scratch --scratch /scratch --bind $(realpath ~/
-scratch/) ~/deepcadrt_v2.sif bash
+scratch/) /acanas/m-BioinfoSupport/singularity/deepcadrt_v2.sif bash
+```
+Change directory with linux command
+```bash	
+cd # use to change directories
+ls # lists directory contents of files and directories
+cd .. # go back to the previous directory
 ```
 Execute the python script
 ```bash	
