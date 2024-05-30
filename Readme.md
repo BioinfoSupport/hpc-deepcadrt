@@ -107,12 +107,7 @@ sbatch deepcadrt.sbatch deepcadrt_train.py --n_epochs=2 --patch_x=100 --patch_y=
 
 ```bash
 cd ~/scratch/Model_trial
-sbatch deepcadrt.sbatch deepcadrt_test.py \
-  --patch_x=100 --patch_y=100 --patch_t=10 \
-  --datasets_path=Test \
-  --pth_dir=Model.out \
-  --output_dir=Test.out \
-  --denoise_model=datasets_test_'training_number'
+sbatch deepcadrt.sbatch deepcadrt_test.py --patch_x=100 --patch_y=100 --patch_t=10 --datasets_path=Test --pth_dir=Model.out --output_dir=Test.out --denoise_model=datasets_test_'training_number'
 ```
 
 **optional arguments:**
