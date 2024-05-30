@@ -49,10 +49,7 @@ rsync -av \
 ### 5. Run the training step
 ```bash
 cd ~/scratch/Model_trial
-sbatch deepcadrt.sbatch deepcadrt_train.py \
-  --n_epochs=2 --patch_x=100 --patch_y=100 --patch_t=10 \
-  --datasets_path=Train \
-  --pth_dir=Model.out
+sbatch deepcadrt.sbatch deepcadrt_train.py --n_epochs=2 --patch_x=100 --patch_y=100 --patch_t=10 --datasets_path=Train --pth_dir=Model.out
 ```
 
 
