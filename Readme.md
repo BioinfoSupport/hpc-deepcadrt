@@ -46,7 +46,7 @@ rsync -av \
 ```
 
 
-### 6. Run the training step
+### 5. Run the training step
 ```bash
 cd ~/scratch/Model_trial
 sbatch deepcadrt.sbatch deepcadrt_train.py \
@@ -103,7 +103,7 @@ sbatch deepcadrt.sbatch deepcadrt_train.py \
 ```
 
 
-### 7. Run the testing step
+### 6. Run the testing step
 
 > [!WARNING]
 > In the following commands, replace 'training_number' with the correct training number
@@ -155,7 +155,7 @@ sbatch deepcadrt.sbatch deepcadrt_test.py \
                         result display (Default='')
 ```
 
-### 8. Copy the trained model back to the NAS
+### 7. Copy the trained model back to the NAS
 ```bash
 rsync -av \
   --no-perms \
@@ -164,7 +164,7 @@ rsync -av \
 ```
 
 
-### 9. Close the vm and Baobab. Restore local terminal
+### 8. Close the vm and Baobab. Restore local terminal
 ```bash	 
 ctrl+D
 ```
